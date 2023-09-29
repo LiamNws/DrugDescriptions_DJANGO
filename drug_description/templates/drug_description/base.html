@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <title>PillTime - Drug Descriptions</title>
+</head>
+<header>
+    
+    <div class="top">
+        <nav class="navbar">
+
+            <ul>
+                <li class="link-box"><a href="" class="nav-link">Home</a></li>
+                <li class="link-box"><a href="drug_descriptions" class="nav-link">Drug Descriptions</a></li>
+            </ul>
+            <img class="logo" src="{% static 'images/pt_logo2.png' %}" alt="PillTime logo">
+        </nav>
+    </div> 
+
+</header>
+
+<body>
+    {% block content %}
+    {% endblock %}
+    <script src="{% static 'javascript/copyBtn.js' %}"></script>
+</body>
+</html>
