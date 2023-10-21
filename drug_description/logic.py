@@ -10,7 +10,13 @@ def process_description(search_term):
     # Create a list of formatted drug descriptions
     result = []
     for drug in matching_drugs:
-        description = f"{drug.name}: {drug.colour} {drug.shape} {drug.form}, '{drug.imprint}' imprinted. -LN"
-        result.append(description)
-
+        if drug.is_active == 1:
+            if drug.imprint == "none":
+                description = f"{drug.name}: {drug.colour} {drug.shape} {drug.form}, no imprint. -LN"
+                result.append(description)
+            else:
+                description = f"{drug.name}: {drug.colour} {drug.shape} {drug.form}, '{drug.imprint}' imprinted. -LN"
+                result.append(description)
+        else:
+            result.append("No active matches found")
     return result
