@@ -1,0 +1,16 @@
+{% extends "drug_description/base.html" %}
+{% block content %}
+<form method="post" action="{% url 'home' %}">
+    {% csrf_token %}
+    <h1 class="form-title">Search for a medicine</h1>
+    <div class="form-group">
+        <label for="input_data">Enter medicine:</label>
+        <input type="text" id="input_data" name="input_data">
+        <button id="submit-button" type="submit">Search</button>
+    </div>
+    <div id="result">
+      {% block results %}
+      {% endblock %}
+      </div>
+  </form>
+{% endblock %}

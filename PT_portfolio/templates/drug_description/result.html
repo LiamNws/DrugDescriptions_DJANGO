@@ -1,0 +1,25 @@
+{% extends "drug_description/input_form.html" %}
+{% load static %}
+
+{% block results %}
+
+{% comment %} SHOW FIRST RESULT ONLY
+{% if results_found and result %}
+    <button id="copy-button"><h1>Copy</h1></button>
+    <p class="result-content">{{ result.0 }}</p>
+{% endif %} {% endcomment %}
+{% comment %} <p class="result-content">{{ result.1 }}</p> {% endcomment %}
+
+{% comment %} SHOW ALL RESULTS {% endcomment %}
+{% if result|length > 0 %}
+    <button id="copy-button"><h1>Copy</h1></button>
+    {% for x in result %}
+        <p class="result-content">{{ x }}</p>
+    {% endfor %}
+{% endif %}
+
+{% if not result %}
+    <p class="no-result">No active matches found</p>
+{% endif %}
+
+{% endblock %}

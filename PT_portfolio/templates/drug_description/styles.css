@@ -147,18 +147,3 @@ input:focus {
     margin-right: 50px;
     font-size: 10px;
 }
-
-table {
-    width: 100%;
-    border: 1px solid #000;
-}
-
-th {
-    background-color: #3498db;
-    color: #fff;
-    padding: 10px;
-}
-
-td {
-    padding: 5px;
-}

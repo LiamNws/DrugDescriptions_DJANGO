@@ -1,0 +1,38 @@
+{% extends "drug_description/pot_locations.html" %}
+{% load static %}
+
+{% block results %}
+
+{% comment %} SHOW FIRST RESULT ONLY
+{% if results_found and result %}
+    <button id="copy-button"><h1>Copy</h1></button>
+    <p class="result-content">{{ result.0 }}</p>
+{% endif %} {% endcomment %}
+{% comment %} <p class="result-content">{{ result.1 }}</p> {% endcomment %}
+
+{% comment %} SHOW ALL RESULTS {% endcomment %}
+    {% comment %} {% for x in result %}
+        <p class="result-content">{{ x }}</p>
+    {% endfor %} {% endcomment %}
+    <table>
+        <thead>
+            <tr>
+                <th>Medication</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in result %}
+            <tr>
+                <td>{{ item.name }}</td>
+                <td>{{ item.location }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% if not result %}
+    <p class="no-result">No matches found</p>
+{% endif %}
+
+{% endblock %}
