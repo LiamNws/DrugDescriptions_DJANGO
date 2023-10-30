@@ -4,10 +4,6 @@ from .locationLogic import process_location
 # Create your views here.
 
 
-# def pot_locations(request):
-#     return render(request, "drug_description/pot_locations.html")
-
-
 def pot_locations(request):
     if request.method == 'POST':
         form = SearchForm(request.POST)

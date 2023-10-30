@@ -1,6 +1,6 @@
 from django.db import models
 
-# Create your models here.
+# Models for drug descriptions DB.
 class Drug(models.Model):
     name = models.CharField(max_length=255)
     medicine_id = models.IntegerField(default=000)

@@ -3,7 +3,9 @@ import os
 
 
 def process_location(search_term):
-    # excel = os.path.join("source", "DrugLocations.xlsx")
+
+    # excel = os.path.join("source", "DrugLocations.xlsx") --causing issues--
+
     excel = r"C:/Users/liamn/IdeaProjects/TestSite/PT_portfolio/PT_portfolio\source/DrugLocations.xlsx"
     try:
         df = pd.read_excel(excel)
@@ -23,8 +25,6 @@ def process_location(search_term):
             name = row["Medication"]
             location = row["Location"]
             result.append({"name": name, "location": location})
-
-            # result.append(f"{name}: {location}")
 
     else:
         result.append("No matches found")

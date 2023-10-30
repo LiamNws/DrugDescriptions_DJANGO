@@ -3,7 +3,6 @@ from django.http import HttpResponse
 from .logic import process_description
 from .forms import SearchForm
 
-# Create your views here.
 def home(request):
     if request.method == "POST":
         form = SearchForm(request.POST)
@@ -16,7 +15,7 @@ def home(request):
                 results_found = True
             return render(request, 'drug_description/result.html', {'result': result, 'results_found': results_found})
         else:
-            # Handle the case where the form is not valid, e.g., display an error message.
+            # Handle the case where the form is not valid
             error_message = "Invalid input. Please check your input and try again."
             return render(request, 'drug_description/input_form.html', {'form': form, 'error_message': error_message})
     else:
